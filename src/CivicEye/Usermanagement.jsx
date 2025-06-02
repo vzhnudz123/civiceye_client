@@ -38,7 +38,7 @@ export const Usermanagement = () => {
         <table className="w-full text-sm text-left h-auto">
           <thead className="text-xs uppercase">
             <tr>
-              <th className="px-6 py-3">Name</th>
+              <th className="px-6 py-3">Name:"</th>
               <th className="px-6 py-3">Email</th>
               <th className="px-6 py-3">Phone</th>
               <th className="px-6 py-3">Address</th>
