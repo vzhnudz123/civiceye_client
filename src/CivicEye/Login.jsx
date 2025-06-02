@@ -33,7 +33,7 @@ export const Login = () => {
           navigate('/admin')
         }
         else{
-        navigate('/')
+        navigate('/home')
         }
 
       },1000)

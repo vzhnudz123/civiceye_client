@@ -76,7 +76,7 @@ const ProfileForm = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-5xl bg-white p-10 rounded-3xl shadow-2xl relative">
-        <Link to="/" className="absolute top-4 left-4 text-blue-600 hover:text-blue-800 transition-all text-4xl">
+        <Link to="/home" className="absolute top-4 left-4 text-blue-600 hover:text-blue-800 transition-all text-4xl">
           <IoArrowBackCircle />
         </Link>
 

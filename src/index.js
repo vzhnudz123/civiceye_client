@@ -30,8 +30,8 @@ root.render(
         <Route path='/profile' element={<ProfileForm></ProfileForm>}></Route>
 
         <Route path='/complaintpage' element={<Complaint></Complaint>}></Route>
-        <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/homeguest' element={<Homeguest></Homeguest>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/' element={<Homeguest></Homeguest>}></Route>
         <Route path='/allmycomplaints' element={<Allmycomplaints></Allmycomplaints>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>

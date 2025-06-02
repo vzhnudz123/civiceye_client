@@ -75,14 +75,14 @@ export const Home = () => {
     else if (value === 'settings') navigate('/settings');
     else if (value === 'logout') {
       logout();
-      navigate('/homeguest');
+      navigate('/');
     }
   };
 
   const logout = () => {
     localStorage.clear();
     localStorage.removeItem('token');
-    navigate('/homeguest')
+    navigate('/')
   }
   console.log(feedback);
 
@@ -139,7 +139,7 @@ export const Home = () => {
           </span>
 
           <div className="flex items-center gap-6 text-gray-700 text-sm md:text-base">
-            <Link to={'/'}><h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3></Link>
+            <Link to={'/home'}><h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3></Link>
             <Link to='/allmycomplaints'> <h3 className="cursor-pointer hover:text-blue-600 transition">My Complaints</h3></Link>
             <Link to={'/about'}><h3 className="cursor-pointer hover:text-blue-600 transition">About</h3></Link>
             <Link to={'/contact'}> <h3 className="cursor-pointer hover:text-blue-600 transition">Contact</h3></Link>

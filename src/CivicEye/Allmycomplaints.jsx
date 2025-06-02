@@ -90,7 +90,7 @@ export const Allmycomplaints = () => {
 
 
         <div className="flex items-center gap-6 text-gray-700 text-sm md:text-base">
-          <Link to={'/'}><h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3></Link>
+          <Link to={'/home'}><h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3></Link>
           <Link to={'/report'}><h3 className="cursor-pointer hover:text-blue-600 transition">My Complaints</h3></Link>
           <Link to={'/about'}><h3 className="cursor-pointer hover:text-blue-600 transition">About</h3></Link> 
           <Link to={'/contact'}><h3 className="cursor-pointer hover:text-blue-600 transition">Contact</h3></Link> 
@@ -109,7 +109,7 @@ export const Allmycomplaints = () => {
         </div>
       </nav>
 
-           <Link to={'/'}> <div className='text-[40px] mt-4'>
+           <Link to={'/home'}> <div className='text-[40px] mt-4'>
         <IoArrowBackCircle />
       </div></Link>
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-100 px-6 py-12 relative"> 
-    <Link to={'/'}><span className='text-[50px] absolute'><IoArrowBackCircle /></span></Link>
+    <Link to={'/home'}><span className='text-[50px] absolute'><IoArrowBackCircle /></span></Link>
       <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
         <h1 className="text-4xl font-bold text-blue-600 mb-6">Contact Us</h1>
         <p className="text-gray-700 text-lg mb-6">
