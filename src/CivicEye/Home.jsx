@@ -35,7 +35,7 @@ export const Home = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        "http://localhost:8000/civiceye/addfeedback",
+        "https://civiceye-150o.onrender.com/civiceye/addfeedback",
         { feedback },
         {
           headers: {
@@ -89,7 +89,7 @@ export const Home = () => {
 
   const feedbackview = async () => {
     try {
-      const feed = await axios.get('http://localhost:8000/civiceye/feedbackview', {
+      const feed = await axios.get('https://civiceye-150o.onrender.com/civiceye/feedbackview', {
         headers: {
           Authorization: `Bearer ${token}`,
         }
@@ -113,7 +113,7 @@ export const Home = () => {
 
   const complaintlength=async()=>{
     try{
-      let total=await axios.get('http://localhost:8000/civiceye/complaintlength');
+      let total=await axios.get('https://civiceye-150o.onrender.com/civiceye/complaintlength');
       setlengthis(total.data);
       console.log("length is",total.data);
       

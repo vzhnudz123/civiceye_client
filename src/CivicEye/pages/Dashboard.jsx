@@ -36,7 +36,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/civiceye/adminview");
+        const response = await axios.get("https://civiceye-150o.onrender.com/civiceye/adminview");
         const filteredUsers = response.data.view.filter((user) => user.role !== "admin");
         setUsers(filteredUsers);
         console.log("Users:", response.data);
@@ -51,7 +51,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/civiceye/complaintview");
+        const response = await axios.get("https://civiceye-150o.onrender.com/civiceye/complaintview");
         setData(response.data.complaints);
         console.log("Complaints:", response.data.complaints);
       } catch (error) {
@@ -65,7 +65,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchMonthlyComplaints = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/civiceye/complaintpermonth");
+        const response = await axios.get("https://civiceye-150o.onrender.com/civiceye/complaintpermonth");
         setMonthlyData(response.data);
         console.log("Monthly complaint data:", response.data);
       } catch (error) {
@@ -79,7 +79,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchStatusCounts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/civiceye/statuscount");
+        const response = await axios.get("https://civiceye-150o.onrender.com/civiceye/statuscount");
         setCount(response.data);
         console.log("Status count:", response.data);
       } catch (error) {

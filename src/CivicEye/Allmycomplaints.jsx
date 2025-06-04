@@ -18,7 +18,7 @@ export const Allmycomplaints = () => {
     try {
       const token = localStorage.getItem('token')
 
-      let response = await axios.get('http://localhost:8000/civiceye/usercomplaint', {
+      let response = await axios.get('https://civiceye-150o.onrender.com/civiceye/usercomplaint', {
         headers: {
           Authorization: ` Bearer ${token}`
         }
@@ -39,7 +39,7 @@ export const Allmycomplaints = () => {
   const Deleteing = async (id) => {
     try {
       const token = localStorage.getItem('token')
-      await axios.delete(`http://localhost:8000/civiceye/userdelete/${id}`, {
+      await axios.delete(`https://civiceye-150o.onrender.com/civiceye/userdelete/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         }

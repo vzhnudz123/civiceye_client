@@ -22,7 +22,7 @@ const isLoggedIn = !!token;
 
   const feedback = async () => {
     try {
-      let response = await axios.get('http://localhost:8000/civiceye/publicfeed')
+      let response = await axios.get('https://civiceye-150o.onrender.com/civiceye/publicfeed')
       setdata(response.data);
       console.log("data is", response.data);
 

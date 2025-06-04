@@ -8,7 +8,7 @@ const Feedback = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/civiceye/feedbackview', {
+                const response = await axios.get('https://civiceye-150o.onrender.com/civiceye/feedbackview', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     }

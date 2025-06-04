@@ -21,7 +21,7 @@ const ProfileForm = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/civiceye/userlogin', {
+        const response = await axios.get('https://civiceye-150o.onrender.com/civiceye/userlogin', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -61,7 +61,7 @@ const ProfileForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put('http://localhost:8000/civiceye/updateprofile', profile, {
+      await axios.put('https://civiceye-150o.onrender.com/civiceye/updateprofile', profile, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

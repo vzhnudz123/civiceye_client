@@ -9,7 +9,7 @@ export const Usermanagement = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/civiceye/adminview")
+        const response = await axios.get("https://civiceye-150o.onrender.com/civiceye/adminview")
         const filteruser = response.data.view.filter(user => user.role !== 'admin')
         setUsers(filteruser)
       } catch (error) {

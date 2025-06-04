@@ -7,7 +7,7 @@ const Complaint = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/civiceye/complaintview');
+      const response = await axios.get('https://civiceye-150o.onrender.com/civiceye/complaintview');
       setData(response.data.complaints);
     } catch (error) {
       console.log(error);
@@ -20,7 +20,7 @@ const Complaint = () => {
 
   const handleStatusUpdate = async (id, status) => {
     try {
-      await axios.put(`http://localhost:8000/civiceye/status/${id}`, { status });
+      await axios.put(`https://civiceye-150o.onrender.com/civiceye/status/${id}`, { status });
       alert("Status updated successfully!");
       fetchData();
     } catch (error) {
