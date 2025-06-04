@@ -24,7 +24,7 @@ export const Home = () => {
 
   const [feedback, setFeedback] = useState('');
 
-  const [lengthis,setlengthis]=useState('');
+  const [lengthis, setlengthis] = useState('');
 
 
 
@@ -96,7 +96,7 @@ export const Home = () => {
       })
       setfeedview(feed.data)
       console.log(feed.data);
-      
+
 
     }
     catch (error) {
@@ -111,17 +111,17 @@ export const Home = () => {
 
   }, [])
 
-  const complaintlength=async()=>{
-    try{
-      let total=await axios.get('https://civiceye-150o.onrender.com/civiceye/complaintlength');
+  const complaintlength = async () => {
+    try {
+      let total = await axios.get('https://civiceye-150o.onrender.com/civiceye/complaintlength');
       setlengthis(total.data);
-      console.log("length is",total.data);
-      
+      console.log("length is", total.data);
+
 
     }
-    catch(error){
+    catch (error) {
       console.log(error);
-      
+
     }
   }
 
@@ -131,33 +131,50 @@ export const Home = () => {
     <div>
       <div className="p-6 bg-gray-50 min-h-screen">
         {/* Navbar */}
-        <nav className="flex items-center justify-between bg-white p-4 rounded-xl shadow-md">
-          <span className="text-2xl md:text-3xl font-bold flex items-center gap-1 text-gray-800">
-            <LuCctv className="text-blue-600 text-3xl" />
-            <span>Civic</span>
-            <span className="text-blue-600">EYE</span>
-          </span>
+      <nav className="bg-white p-4 rounded-xl shadow-md overflow-x-auto">
+  <div className="flex items-center justify-between min-w-max">
+    {/* Logo Section */}
+    <span className="text-2xl md:text-3xl font-bold flex items-center gap-1 text-gray-800 flex-shrink-0">
+      <LuCctv className="text-blue-600 text-3xl" />
+      <span>Civic</span>
+      <span className="text-blue-600">EYE</span>
+    </span>
 
-          <div className="flex items-center gap-6 text-gray-700 text-sm md:text-base">
-            <Link to={'/home'}><h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3></Link>
-            <Link to='/allmycomplaints'> <h3 className="cursor-pointer hover:text-blue-600 transition">My Complaints</h3></Link>
-            <Link to={'/about'}><h3 className="cursor-pointer hover:text-blue-600 transition">About</h3></Link>
-            <Link to={'/contact'}> <h3 className="cursor-pointer hover:text-blue-600 transition">Contact</h3></Link>
-            <h3 onClick={logout} className="cursor-pointer hover:text-blue-600 transition">Logout</h3>
+    {/* Links Section */}
+    <div className="flex items-center gap-4 md:gap-6 text-gray-700 text-sm md:text-base overflow-x-auto whitespace-nowrap ml-4">
+      <Link to="/home">
+        <h3 className="cursor-pointer hover:text-blue-600 transition">Home</h3>
+      </Link>
+      <Link to="/allmycomplaints">
+        <h3 className="cursor-pointer hover:text-blue-600 transition">My Complaints</h3>
+      </Link>
+      <Link to="/about">
+        <h3 className="cursor-pointer hover:text-blue-600 transition">About</h3>
+      </Link>
+      <Link to="/contact">
+        <h3 className="cursor-pointer hover:text-blue-600 transition">Contact</h3>
+      </Link>
+      <h3 onClick={logout} className="cursor-pointer hover:text-blue-600 transition">Logout</h3>
 
-            <div className="flex items-center gap-2">
-              <FaUserAlt />
-              <select onChange={handleSelect}
-                defaultValue="default"
-                className="px-2 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-200">
-                <option value="default" disabled> options</option>
-                <option value="profile">Profile</option>
-                <option value="settings">Settings</option>
-                <option value="logout">Logout</option>
-              </select>
-            </div>
-          </div>
-        </nav>
+      {/* Dropdown Section */}
+      <div className="flex items-center gap-2 flex-shrink-0">
+        <FaUserAlt />
+        <select
+          onChange={handleSelect}
+          defaultValue="default"
+          className="px-2 py-1 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring focus:ring-blue-200"
+        >
+          <option value="default" disabled>options</option>
+          <option value="profile">Profile</option>
+          <option value="settings">Settings</option>
+          <option value="logout">Logout</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 
         {/* Carousel */}
         <div className="mt-6 rounded-xl overflow-hidden shadow-md h-[300px]">

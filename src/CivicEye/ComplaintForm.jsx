@@ -134,7 +134,7 @@ const ComplaintForm = () => {
             >
               Submit
             </button>
-            <Link to={"/"}><button
+            <Link to={"/home"}><button
               type="button"
               className="bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-6 rounded-md"
             >
