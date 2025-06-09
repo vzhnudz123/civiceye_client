@@ -227,7 +227,7 @@ export const Home = () => {
             <span>{lengthis.complaintCount}</span>
           </div>
           <div className="h-[200px] w-[300px] rounded-xl text-center pt-20 bg-white shadow-md hover:shadow-blue-400 transition-transform duration-200 transform hover:scale-105 text-gray-700">
-            <p>Reported Fields</p>
+            <p>Verify Complaints</p>
           </div>
           <div className="h-[200px] w-[300px] rounded-xl text-center pt-20 bg-white shadow-md hover:shadow-blue-400 transition-transform duration-200 transform hover:scale-105 text-gray-700">
             <p>Reward Distributed</p>

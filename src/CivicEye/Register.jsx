@@ -100,7 +100,7 @@ const Register = () => {
               type="submit"
               className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
             >
-              Login
+              Register
             </button>
           </form>
 

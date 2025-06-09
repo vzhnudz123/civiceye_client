@@ -11,13 +11,16 @@ import { MdEmail } from 'react-icons/md';
 import { FiPhoneCall } from 'react-icons/fi';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { MdVerifiedUser } from "react-icons/md";
 import axios from 'axios';
 
 const Homeguest = () => {
   const [data, setdata] = useState([]);
 
+  const [lengthis, setlengthis] = useState('');
+
   const token = localStorage.getItem("token");
-const isLoggedIn = !!token;
+  const isLoggedIn = !!token;
 
 
   const feedback = async () => {
@@ -38,7 +41,22 @@ const isLoggedIn = !!token;
 
   useEffect(() => {
     feedback()
+    complaintlength()
   }, [])
+
+  const complaintlength = async () => {
+    try {
+      let total = await axios.get('https://civiceye-150o.onrender.com/civiceye/complaintlength');
+      setlengthis(total.data);
+      console.log("length is", total.data);
+
+
+    }
+    catch (error) {
+      console.log(error);
+
+    }
+  }
   return (
     <div>
       <div className="p-6 bg-gray-50 min-h-screen">
@@ -68,8 +86,8 @@ const isLoggedIn = !!token;
         <div className="mt-6 rounded-xl overflow-hidden shadow-md h-[300px] ">
 
           <div className='text-center absolute z-50 pt-[70px]'>
-            <h3 className='t text-[30px]  w-[600px] ms-[406px] text-white font-bold'>Make Your Voice Heard Report problems help Your City And Earn Reward</h3>
-            <Link to={'/login'}> <button className='text-[20px] bg-blue-600 rounded w-[80px] h-[45px] ms-[450px]'>Signup</button></Link>
+            <h3 className='t text-[30px]  w-[600px] ms-[406px] text-white font-bold'>Make Your Voice Heard Report problems help Your City </h3>
+            <Link to={'/register'}> <button className='text-[20px] bg-blue-600 rounded w-[80px] h-[45px] ms-[450px]'>Register</button></Link>
 
           </div>
           <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
@@ -95,12 +113,12 @@ const isLoggedIn = !!token;
         <div className="flex flex-wrap gap-10 justify-center mt-10 bg-white p-6 rounded-xl shadow-lg">
           <button className="h-[200px] w-[200px] rounded-xl bg-white shadow-md flex flex-col items-center justify-center gap-2 hover:shadow-blue-300 transition-transform duration-200 transform hover:scale-105">
             <ImBin className="text-[50px] text-red-500" />
-            <span className="font-medium text-gray-700">Complints Registerd</span>
+            <span className="font-medium text-gray-700">Complaints Registerd</span>
           </button>
 
           <button className="h-[200px] w-[200px] rounded-xl bg-white shadow-md flex flex-col items-center justify-center gap-2 hover:shadow-blue-300 transition-transform duration-200 transform hover:scale-105">
             <span className="text-[50px]">🚫</span>
-            <span className="font-medium text-gray-700">Reports Filed</span>
+            <span className="font-medium text-gray-700">Public Nuisance</span>
           </button>
 
           <button className="h-[200px] w-[200px] rounded-xl bg-white shadow-md flex flex-col items-center justify-center gap-2 hover:shadow-blue-300 transition-transform duration-200 transform hover:scale-105">
@@ -120,10 +138,15 @@ const isLoggedIn = !!token;
         <div className="flex flex-wrap gap-10 justify-center rounded-xl shadow-md bg-white p-6 mt-5">
           <div className="h-[200px] w-[300px] rounded-xl text-center pt-20 bg-white shadow-md hover:shadow-blue-400 transition-transform duration-200 transform hover:scale-105 text-gray-700">
             <p>Complaint Registered</p>
+            <span>{lengthis.complaintCount}</span>
           </div>
           <div className="h-[200px] w-[300px] rounded-xl text-center pt-20 bg-white shadow-md hover:shadow-blue-400 transition-transform duration-200 transform hover:scale-105 text-gray-700">
-            <p>Reported Fields</p>
+            <p>Verified Complaints</p>
+            <div className="flex justify-center mt-2 text-2xl text-blue-600">
+              <MdVerifiedUser />
+            </div>
           </div>
+
           <div className="h-[200px] w-[300px] rounded-xl text-center pt-20 bg-white shadow-md hover:shadow-blue-400 transition-transform duration-200 transform hover:scale-105 text-gray-700">
             <p>Reward Distributed</p>
           </div>
@@ -156,21 +179,21 @@ const isLoggedIn = !!token;
 
           {/* Feedback Form */}
           {isLoggedIn && (
-          <div className="flex justify-center items-start gap-6">
-            <div className="w-24 h-24 bg-gray-300 rounded-full"></div>
-            <div className="w-[600px]">
-              <textarea
-                className="w-full h-32 border rounded-md p-4 text-gray-600 placeholder-gray-400 resize-none shadow"
-                placeholder="Write your feedback"
-              ></textarea>
-              <button className="bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold px-6 py-2 rounded-full mt-4">
-                Submit
-              </button>
+            <div className="flex justify-center items-start gap-6">
+              <div className="w-24 h-24 bg-gray-300 rounded-full"></div>
+              <div className="w-[600px]">
+                <textarea
+                  className="w-full h-32 border rounded-md p-4 text-gray-600 placeholder-gray-400 resize-none shadow"
+                  placeholder="Write your feedback"
+                ></textarea>
+                <button className="bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold px-6 py-2 rounded-full mt-4">
+                  Submit
+                </button>
+              </div>
             </div>
-          </div>
           )}
         </div>
-          
+
 
 
         {/* Contact Support Section */}
