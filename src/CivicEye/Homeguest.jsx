@@ -84,12 +84,18 @@ const Homeguest = () => {
 
         {/* Carousel */}
         <div className="mt-6 rounded-xl overflow-hidden shadow-md h-[300px] ">
+          
+<div className="absolute z-50 pt-16 w-full flex flex-col items-center text-center px-4">
+  <h3 className="text-white font-bold text-2xl md:text-3xl lg:text-4xl max-w-xl">
+    Make Your Voice Heard. Report problems. Help Your City.
+  </h3>
+  <Link to="/register">
+    <button className="mt-4 text-base md:text-lg bg-blue-600 text-white rounded px-6 py-2 hover:bg-blue-700 transition">
+      Register
+    </button>
+  </Link>
+</div>
 
-          <div className='text-center absolute z-50 pt-[70px]'>
-            <h3 className='t text-[30px]  w-[600px] ms-[406px] text-white font-bold'>Make Your Voice Heard Report problems help Your City </h3>
-            <Link to={'/register'}> <button className='text-[20px] bg-blue-600 rounded w-[80px] h-[45px] ms-[450px]'>Register</button></Link>
-
-          </div>
           <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false}>
             <div>
               <img src={img} alt="First Slide" className="h-[300px] object-cover w-full" />
