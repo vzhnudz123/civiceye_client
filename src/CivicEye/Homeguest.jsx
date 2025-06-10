@@ -59,7 +59,7 @@ const Homeguest = () => {
   }
   return (
     <div>
-      <div className="p-6 bg-gray-50 min-h-screen">
+      <div className=" bg-gray-50 min-h-screen">
         {/* Navbar */}
         <nav className="flex items-center justify-between bg-white p-4 rounded-xl shadow-md">
           <span className="text-2xl md:text-3xl font-bold flex items-center gap-1 text-gray-800">
